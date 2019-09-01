@@ -8,11 +8,15 @@ import Player from '@/components/Player'
 import PlayerProfile from '@/components/Player/Profile'
 import PlayerStats from '@/components/Player/Stats'
 
+import SettingDetail from '@/components/setting/Detail'
+import SettingHeader from '@/components/setting/Header'
+import SettingSidebar from '@/components/setting/sidebar'
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
+    /* {
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
@@ -38,6 +42,16 @@ export default new Router({
           component: PlayerStats
         }
       ]
+    }, */
+
+    {
+      path: '/',
+      name: 'Home',
+      components: {
+        myHeader: SettingHeader,
+        myDetail: SettingDetail,
+        mySidebar: SettingSidebar
+      }
     }
   ]
 })

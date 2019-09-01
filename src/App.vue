@@ -1,26 +1,20 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <button class="btn btn-danger">危险</button>
-    <p>
-     <!-- <router-link to="/">Home</router-link>
-      <router-link to="/news">新闻</router-link>
-      <router-link to="/about">关于</router-link>
-      <router-view/>-->
-    </p>
-    <p>
-      <router-link to="/">Home</router-link>
-      <router-link to="/player/1">哈登1</router-link>
-      <router-link to="/player/2">库里1</router-link>
-    </p>
-    <p>
-      <button @click="btnClick(1)">库里2</button>
-      <button @click="btnClick(2)">哈登2</button>
-      <!-- 记得加: 如果不加的话，会默认当成字符串处理-->
-      <router-link :to="{name:'Player',params:{uid:'1'}}">库里3</router-link>
-      <router-link :to="{path:'/player/2/stats'}">哈登3</router-link>
-    </p>
-    <router-view/>
+    <table width="100%">
+      <tr>
+        <td colspan="2" style="background-color: darkgoldenrod">
+          <router-view name="myHeader"> </router-view>
+        </td>
+      </tr>
+      <tr>
+        <td width="20%" style="background-color: thistle">
+          <router-view name= "mySidebar"></router-view>
+        </td>
+        <td width="80%" style="background-color: aquamarine">
+          <router-view name ="myDetail"></router-view>
+        </td>
+      </tr>
+    </table>
   </div>
 </template>
 
